@@ -1,0 +1,175 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;UITEST</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>$(DefineConstants);LIVEXAML_DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='UITEST'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;LIVEXAML_DEBUG; IS_UI_TEST</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>$(DefineConstants);DISABLE_XAMARINFORMSLIVE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <NoWarn>1701;1702;</NoWarn>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
+    <PackageReference Include="System.Buffers" Version="4.5.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="LiveXAML" Version="2.1.59" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Plugin.XSnack" Version="1.0.17" />
+    <PackageReference Include="Refit" Version="4.6.107" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.14.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.14.0" />
+    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.14.0" />
+    <PackageReference Include="CSharp.OperationResult" Version="0.1.5" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="Features\Localization\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Product\Cart\ProductCartLineItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Features\Product\Cart\ProductCartPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Update="Features\Localization\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+    
+  <ItemGroup>
+    <None Remove="Features\Product\FakeProducts.json" />
+    <EmbeddedResource Include="Features\Product\FakeProducts.json" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdParties\Emgu.TF.Lite\Emgu.TF.Lite.csproj" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Reference Include="Sharpnado.Infrastructure">
+      <HintPath>..\ThirdParties\Sharpnado.Forms.HorizontalListView\Sharpnado.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sharpnado.Presentation.Forms">
+      <HintPath>..\ThirdParties\Sharpnado.Forms.HorizontalListView\Sharpnado.Presentation.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+    
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="ControlTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Home\FreeShippingBanner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Home\HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Home\RecommendedItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\LogIn\LogInPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Cart\ProductCartLineItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Cart\ProductCartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Category\ProductCategoryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Category\ProductView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Category\TwoProductsItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Detail\FeatureItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Detail\PictureItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\Detail\ProductDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\PopularItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Product\PreviouslySeenItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Scanning\AR\CameraPreviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Scanning\Photo\CameraPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Scanning\Photo\CameraPreviewTakePhotoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Scanning\Photo\GalleryImageTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Scanning\RecommendedItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Settings\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Shell\FlyoutHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Features\Shell\TheShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="FontStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="GlobalStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Sizes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  
+</Project>
