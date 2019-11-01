@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Cookie3</folder>
+	<filename>IMG_20191024_184630.jpg</filename>
+	<path>C:\Projects\DotnetConf2019BCN\ProductImages\Cookie3\IMG_20191024_184630.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3456</width>
+		<height>4608</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Cookie3</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>957</xmin>
+			<ymin>1687</ymin>
+			<xmax>2193</xmax>
+			<ymax>2840</ymax>
+		</bndbox>
+	</object>
+</annotation>

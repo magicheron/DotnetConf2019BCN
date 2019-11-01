@@ -1,0 +1,9 @@
+*.dll
+*.pdb
+*.lock
+*/.vs/*
+**/obj/*
+**/PublishProfiles/*
+**.user
+**/records
+*.tar.gz

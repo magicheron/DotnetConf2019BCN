@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Cookie4</folder>
+	<filename>IMG_20191024_185200.jpg</filename>
+	<path>C:\Projects\DotnetConf2019BCN\ProductImages\Cookie4\IMG_20191024_185200.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3456</width>
+		<height>4608</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Cookie4</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>536</xmin>
+			<ymin>1918</ymin>
+			<xmax>1881</xmax>
+			<ymax>3278</ymax>
+		</bndbox>
+	</object>
+</annotation>
